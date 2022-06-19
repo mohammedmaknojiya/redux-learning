@@ -1,6 +1,6 @@
 import { createStore } from "redux";
-import { bugTrackerReducer } from "./BugTracker/Reducer";
+import rootReducer from "./rootReducer";
 
-let store = createStore(bugTrackerReducer);
+let store = createStore(rootReducer);
 
 export default store;

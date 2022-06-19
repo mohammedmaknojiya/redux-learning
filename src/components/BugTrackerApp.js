@@ -9,7 +9,7 @@ import {
 
 const BugTrackerApp = () => {
   const dispatch = useDispatch();
-  const bugTrackerData = useSelector((state) => state);
+  const bugTrackerData = useSelector((state) => state.bugs);
 
   return (
     <div>
