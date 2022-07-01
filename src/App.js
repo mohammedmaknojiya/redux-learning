@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import store from "./store/store";
 import BugTrackerApp from "./components/BugTrackerApp";
 import CounterApp from "./components/CounterApp";
+import FetchDataCustomThunk from "./components/FetchDataCustomThunk";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <div>
         <BugTrackerApp />
         <CounterApp />
+        <FetchDataCustomThunk />
       </div>
     </Provider>
   );
