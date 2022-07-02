@@ -1,23 +1,26 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUserApiCall } from "../store/CustomThunkMiddleware/ActionCreator";
+import { apiCallThroughMiddleWare } from "../store/CustomThunkMiddleware/ActionCreator";
 
 const FetchDataCustomThunk = () => {
   const dispatch = useDispatch();
   const userDetails = useSelector((state) => state.userDetails);
 
-  const handleFetchUserData = () => {
-    dispatch(fetchUserApiCall());
+  const handleFetchUserDataApiMiddleware = () => {
+    dispatch(apiCallThroughMiddleWare());
   };
+
   return (
     <div>
-      <h1>Fetch Data Using Custom Thunk Middleware</h1>
-      <button onClick={handleFetchUserData}>Fetch Data</button>
-      <h2>Loading Data :</h2> {userDetails.loading ? "Yes" : "No"}
-      <h2>User Data: </h2>
-      {userDetails.userData.map((user) => (
-        <span>{user}</span>
-      ))}
+      <h2>User Data Through Api call middleware: </h2>
+      <button onClick={handleFetchUserDataApiMiddleware}>
+        Fetch Data through api call middleware
+      </button>
+      <div>
+        {userDetails.userData.map((user) => (
+          <span key={user.name}>{user.name}</span>
+        ))}
+      </div>
     </div>
   );
 };

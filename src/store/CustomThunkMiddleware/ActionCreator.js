@@ -37,3 +37,16 @@ export const fetchUserApiCall = () => {
     }
   };
 };
+
+export const apiCallThroughMiddleWare = () => {
+  return {
+    type: "CALL_API",
+    payload: {
+      url: "/users",
+      method: "get",
+      data: {},
+      onSuccess: actions.FETCH_USER_SUCCESS,
+      onFailure: actions.FETCH_USER_FAILURE,
+    },
+  };
+};
